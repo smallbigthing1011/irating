@@ -2,7 +2,6 @@ package com.example.logbook4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         EditText cleanliness = (EditText) findViewById(R.id.cleanliness);
         EditText food = (EditText) findViewById(R.id.food);
         EditText note = (EditText) findViewById(R.id.note);
+        EditText reporter = (EditText) findViewById(R.id.reporter);
 
         String nameValue = name.getText().toString();
         String typeValue = type.getText().toString();
@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         String cleanlinessValue = cleanliness.getText().toString();
         String foodValue = food.getText().toString();
         String noteValue = note.getText().toString();
-
+        String reporterValue = reporter.getText().toString();
         String msg;
-        msg = "Restaurant: " + nameValue + "\n" + "Type: " + typeValue + "\n" + "Visited: " + dateValue + "\n" + "Price: " + priceValue + "\n" + "Service: " + serviceValue + "\n" + "Cleanliness: " + cleanlinessValue + "\n" + "Food: " + foodValue + "\n" + "Note: " + noteValue + "\n";
+        msg = "Restaurant: " + nameValue + "\n" + "Type: " + typeValue + "\n" + "Visited: " + dateValue + "\n" + "Price: " + priceValue + "\n" + "Service: " + serviceValue + "\n" + "Cleanliness: " + cleanlinessValue + "\n" + "Food: " + foodValue + "\n" + "Note: " + noteValue + "\n" + "Reporter: " + reporterValue + "\n";
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        if(nameValue.isEmpty()||typeValue.isEmpty()||dateValue.isEmpty()||priceValue.isEmpty()||serviceValue.isEmpty()||cleanlinessValue.isEmpty()||foodValue.isEmpty()) {
+        if(nameValue.isEmpty()||typeValue.isEmpty()||dateValue.isEmpty()||priceValue.isEmpty()||serviceValue.isEmpty()||cleanlinessValue.isEmpty()||foodValue.isEmpty()||reporterValue.isEmpty()) {
             msg = "Please check and fulfill the form";
             builder.setMessage(msg).setNegativeButton("Turn back", new DialogInterface.OnClickListener() {
                 @Override
